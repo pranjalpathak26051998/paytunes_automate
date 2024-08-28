@@ -1,0 +1,8 @@
+node_modules
+pranjal.p+pranjalstgAdmin@paytunes.in
+user@123
+//form[@id='login-form']//input[@type='submit' and @value='LOGIN']
+//tag_name[@Attribute_name = “Value of attribute”]
+note.txt
+data.js
+.env
