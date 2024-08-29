@@ -156,10 +156,6 @@ describe('Paytunes Brand Creation', () => {
 
 
   });
-
-
-
-
   it('//enter notes', async function () {
 
     //enter notes
@@ -167,10 +163,7 @@ describe('Paytunes Brand Creation', () => {
     await driver.findElement(By.id("id_notes")).sendKeys(notes_to_enter)
     // await driver.sleep(1500)
     console.log(notes_to_enter + " has been entered successfully")
-
-
   });
-
 
   it(' //clicking on save and continue to save the brand', async function () {
 
