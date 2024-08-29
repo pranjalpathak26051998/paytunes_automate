@@ -1,4 +1,5 @@
 const { Builder, value, Browser, By, Key, Until, withTagName, until } = require('selenium-webdriver');
+require('dotenv').config();
 (async function sync_RO(){
     let driver = await new Builder().forBrowser(Browser.CHROME).build();
     console.log("Created an instance for the chrome browser");
@@ -8,8 +9,9 @@ const { Builder, value, Browser, By, Key, Until, withTagName, until } = require(
         await driver.get(website_url);
         console.log("Website reached successfully");
         //login using superUser having the permission of order full access;
-        let id_username='pranjal.p+super@paytunes.in';
-        let id_password='Pravas@200';
+        let id_username=process.env.username_dev_payutunes_superUser;
+        let id_password= process.env.password_dev_payutunes_superUser;
+
                          //enter username
         await driver.findElement(By.id('id_username')).clear();
         await driver.findElement(By.id('id_username')).sendKeys(id_username);
@@ -54,13 +56,6 @@ const { Builder, value, Browser, By, Key, Until, withTagName, until } = require(
         //li[@class='success']//a
        let invoice_href= await driver.findElement(By.xpath("//li[@class='success']//a")).getAttribute("href");
         console.log("the invoice href link = "+invoice_href);
-
-
-         
-
-
-
-
 
 
     } catch (error) {

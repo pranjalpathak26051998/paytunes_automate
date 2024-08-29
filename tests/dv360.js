@@ -19,8 +19,9 @@ const chrome = require('selenium-webdriver/chrome');
         console.log(`The Title of the website is ${title}`);
 
         // Credentials for signing in
-        let id_username = "pranjal.p+pranjalstgAdmin@paytunes.in";
-        let id_password = "user@123";
+
+        let id_username= process.env.username_staging;
+        let id_password = process.env.username_password;
 
         // Function to sign in
         async function signin(id_username, id_password) {
@@ -132,15 +133,7 @@ const chrome = require('selenium-webdriver/chrome');
     await driver.sleep(3000)
 
     // //Setting the environment to take the input in console to execute whether which boolean has to be chosen.
-    // const rl = readline.createInterface({
-    //     input: process.stdin,
-    //     output:process.stdout,
-    // });
-
-    // rl.question("Enter the input num: ",(num1)=>{
-    //     console.log(num1)
-    //     return num1
-    // })
+ 
 
     
     async function show_client_budget(){

@@ -3,7 +3,7 @@ const fs = require('fs')
 const { Builder, Browser, By,Build, Key, value, until, withTagName } = require('selenium-webdriver');
 const readline = require('readline');
 const { stdin } = require('process');
-
+require('dotenv').config()
 (async function create_DV_campaign(){
     let ro_id_dv = 676
     // Created an instance of the Chrome Web-Driver...
@@ -24,13 +24,9 @@ const { stdin } = require('process');
        //sigin in 
        
     //signin process
-    // pranjal.p+1@paytunes.in     --> on dev
-    // pranjal.p+pranjalstgAdmin@paytunes.in   --> on staging
-    // let id_username = "pranjal.p+1@paytunes.in";
-    // let id_password = "Pravas@200";
-    let id_username = "pranjal.p+pranjalstgAdmin@paytunes.in";
-    // let id_password = "Pravas@200";
-    let id_password = "user@123";
+
+    let id_username= process.env.username_staging;
+    let id_password = process.env.username_password;
     //Creating a signin function
     async function signin(id_username,id_password){
         
