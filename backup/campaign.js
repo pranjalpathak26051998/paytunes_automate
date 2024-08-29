@@ -7,18 +7,6 @@ require('dotenv').config();
 // const path = require('path')
 // const expect = chai.expect
 
-
-
-// let ro_no
-// async function getro() {
-//      ro_no = await create_RO();
-//     console.log("ro_no", ro_no);
-//     // let x = ro_no.resultant_ro
-//     // console.log("ro_search_part", ro_no.RO_no_search_part)
-//     // let y = ro_no.RO_no_search_part
-//     // return ro_no
-//   }
-//   getro()
 (async function instanceCampaignElements() {
     let driver = await new Builder().forBrowser(Browser.CHROME).build()
     console.log("Driver has accessed the chrome browser")
@@ -29,15 +17,10 @@ require('dotenv').config();
         console.log("website url of campaign accessed successfully");
 
         //signin process
-        // pranjal.p+1@paytunes.in     --> on dev
-        // pranjal.p+pranjalstgAdmin@paytunes.in   --> on staging
-        // let id_username = "pranjal.p+1@paytunes.in";
-        // let id_password = "Pravas@200";
+
         let id_username = process.env.username_staging;
         let id_password = process.env.password_staging;
-        // let id_username = "pranjal.p+pranjalstgAdmin@paytunes.in";
-        // let id_password = "Pravas@200";
-        // let id_password = "user@123";
+
         //enter username 
         await driver.findElement(By.id("id_username")).clear();
         await driver.findElement(By.id('id_username')).sendKeys(id_username);
