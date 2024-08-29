@@ -40,16 +40,11 @@ let driver = new Builder()
       console.log("the title of the page = " + title);
   
       //signin process
-      // pranjal.p+1@paytunes.in     --> on dev
-      // pranjal.p+pranjalstgAdmin@paytunes.in   --> on staging
-      // let id_username = "pranjal.p+1@paytunes.in";
-      // let id_password = "Pravas@200";
-      // let id_username = "pranjal.p+pranjalstgAdmin@paytunes.in";
+
       let id_username= process.env.username_staging;
       let id_password = process.env.username_password;
       console.log("username fetched successfully from .env file ");
-      // let id_password = "Pravas@200";
-      // let id_password = "user@123";
+ 
       
       //enter username
       await driver.findElement(By.id("id_username")).clear();
