@@ -6,6 +6,6 @@ user@123
 note.txt
 data.js
 .env
-ro.txt
+tests/ro.txt
 cookies.json
 
