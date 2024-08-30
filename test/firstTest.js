@@ -114,7 +114,7 @@ describe('Paytunes Brand Creation', () => {
     //initially clickin over it
     // await driver.sleep(5000);
     let brand_category_xpath = "//div[@class='form-row field-category field-domain']/div[1]/span[1]/span[1]/span[1]"
-    let brand_category_selected = "Local News"
+    let brand_category_selected = process.env.brand_category_selected
     // await driver.findElement(By.xpath(brand_category_xpath)).click()
     // await driver.findElement(By.xpath(brand_category_xpath)).clear()
     await driver.findElement(By.xpath(brand_category_xpath)).sendKeys(brand_category_selected);
@@ -124,25 +124,8 @@ describe('Paytunes Brand Creation', () => {
     // await driver.sleep(2000);
     console.log("Brand Category " + brand_category_selected + " is selected successfully");
     
-
+    // return brand_category_selected
   });
-
-
-  it('//Selecting for IAB_category', async function () {
-
-    // await driver.sleep(20000);
-    //Selecting for IAB_category
-    let IAB_category_xpath = "//div[@class='form-row field-brand_company field-iab_category']/div[2]/div[1]/span/span/span/span"
-    let IAB_category_selected = brand_category_selected
-    await driver.findElement(By.xpath(IAB_category_xpath)).click();
-    // await driver.sleep(2000);
-    let IAB_category_selected_xpath = `//li[text()='${IAB_category_selected}']`
-    await driver.findElement(By.xpath(IAB_category_selected_xpath)).click();
-    // await driver.sleep(2000);
-    console.log("IAB Category selected successfully");
-
-  });
-
 
   it('//entering the Brand Domain name', async function () {
 
@@ -157,6 +140,25 @@ describe('Paytunes Brand Creation', () => {
 
 
   });
+
+
+  it('//Selecting for IAB_category', async function () {
+
+    // await driver.sleep(20000);
+    //Selecting for IAB_category
+    let IAB_category_xpath = "//div[@class='form-row field-brand_company field-iab_category']/div[2]/div[1]/span/span/span/span"
+    let IAB_category_selected = process.env.IAB_category_selected
+    await driver.findElement(By.xpath(IAB_category_xpath)).click();
+    // await driver.sleep(2000);
+    let IAB_category_selected_xpath = `//li[text()='${IAB_category_selected}']`
+    await driver.findElement(By.xpath(IAB_category_selected_xpath)).click();
+    // await driver.sleep(2000);
+    console.log("IAB Category selected successfully");
+
+  });
+
+
+
   it('//enter notes', async function () {
 
     //enter notes
