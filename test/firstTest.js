@@ -109,9 +109,10 @@ describe('Paytunes Brand Creation', () => {
   });
 
 
-  it('//selecting the brand company ', async function () {
-    //selecting the brand company 
+  it('//selecting the brand category ', async function () {
+    //selecting the brand category 
     //initially clickin over it
+    // await driver.sleep(5000);
     let brand_category_xpath = "//div[@class='form-row field-category field-domain']/div[1]/span[1]/span[1]/span[1]"
     let brand_category_selected = "Local News"
     // await driver.findElement(By.xpath(brand_category_xpath)).click()
@@ -122,14 +123,14 @@ describe('Paytunes Brand Creation', () => {
     await driver.findElement(By.xpath(brand_category_selected_xpath)).click();
     // await driver.sleep(2000);
     console.log("Brand Category " + brand_category_selected + " is selected successfully");
-
+    
 
   });
 
 
   it('//Selecting for IAB_category', async function () {
 
-
+    // await driver.sleep(20000);
     //Selecting for IAB_category
     let IAB_category_xpath = "//div[@class='form-row field-brand_company field-iab_category']/div[2]/div[1]/span/span/span/span"
     let IAB_category_selected = brand_category_selected
@@ -181,4 +182,4 @@ describe('Paytunes Brand Creation', () => {
   // it('',async function(){
 
   // });
-}).timeout(30000);
+}).timeout(60000);
