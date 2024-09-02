@@ -6,22 +6,38 @@ const mocha = require('mocha');
 require('dotenv').config();
 const { create_RO } = require('../tests/ro');
 
+let ro_no
+async function getro() {
+    ro_no = await create_RO();
+    console.log("ro_no", ro_no);
+
+    return ro_no
+}
+
 describe('RO and Campaign end to end', () => {
     let driver
     let website_url = 'https://staging-connect.paytunes.in/';
 
     let id_username = process.env.username_staging;
     let id_password = process.env.password_staging;
+
     before(async function () {
+
         driver = await new Builder().forBrowser(Browser.CHROME).build();
         console.log("Driver accessed successfully");
+
     });
     after(async function () {
         await driver.quit();
         console.log("Closed WebDriver instance.");
     });
 
+
+
     it('fetching RO creation', async function () {
+        //ro_creation
+
+
         // await getro();
         ro_no = await getro();
         if (ro_no) {
@@ -76,20 +92,6 @@ describe('RO and Campaign end to end', () => {
 
     });
 
-
-    it('', async function () {
-
-    });
-
-
-    it('', async function () {
-
-    });
-
-
-    it('', async function () {
-
-    });
 
 
 }).timeout(90000);
