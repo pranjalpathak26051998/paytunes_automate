@@ -276,7 +276,7 @@ describe('RO and Campaign end-to-end', function() {
 
     it('Clicking on the general tab',async function(){
         //Clicking on the general tab
-        await driver.wait(until.elementLocated(By.xpath("//a[text()='General']")), 1000).click();
+        await driver.wait(await until.elementLocated(By.xpath("//a[text()='General']")), 1000).click();
         console.log("Clicked on General tab successfully");
         
     });
@@ -537,15 +537,6 @@ describe('RO and Campaign end-to-end', function() {
         console("Line item created successfully")
         
     });
-
-    // it('',async function(){
-        
-    // });
-
-    // it('',async function(){
-        
-    // });
-
     // it('',async function(){
         
     // });
