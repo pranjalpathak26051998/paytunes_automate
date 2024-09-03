@@ -4,9 +4,10 @@
   "description": "Automating Ro creation and Campaign creation on paytunes",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 50000"
-    
+    "test:brand": "mocha test/brandTest.js --timeout 50000",
+    "test:campaign": "mocha test/campaignTest.js --timeout 50000"
   },
+
   "author": "Pranjal Pathak",
   "license": "ISC",
   "dependencies": {

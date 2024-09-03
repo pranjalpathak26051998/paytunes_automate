@@ -4,7 +4,7 @@ const mocha = require('mocha');
 require('dotenv').config();
 const { create_RO } = require('../tests/ro');
 
-describe('RO and Campaign end-to-end', () => {
+describe('RO and Campaign end-to-end', function() {
     let driver;
     let website_url = 'https://staging-connect.paytunes.in/';
     let ro_id;
@@ -38,9 +38,12 @@ describe('RO and Campaign end-to-end', () => {
         console.log("Closed WebDriver instance.");
     });
 
+ 
+
     it('should load the STAGING PayTunes website', async function () {
         await driver.get(website_url);
         console.log("Website fetched and loaded successfully");
+        
     });
 
     it('Enter the username', async function () {
@@ -61,6 +64,15 @@ describe('RO and Campaign end-to-end', () => {
         await driver.findElement(By.xpath("//form[@id='login-form']//input[@type='submit' and @value='LOGIN']")).click();
         console.log("Sign-in button clicked successfully");
         await driver.sleep(1000);
+
+        it('RO generation check', function(){
+            if(ro_id){
+                console.log(" the RO Check is successfull")
+            }
+            else{
+                console.log("RO check failed")
+            }
+        } );
     });
 
     it('Find, click, and enter on Agency', async function () {
