@@ -474,7 +474,7 @@ describe('RO and Campaign end-to-end', function() {
         const remove_inline_xpath = "//a[@class='inline-deletelink']"
         const remove_inline_available = await driver.findElement(By.xpath(remove_inline_xpath))
         console.log(" remove inline line item option found successfully")
-        // ---------------------------------------------------------------------------------------------------------------------------------------------
+        // ------------------------------------------- - - - - - - - - - - ----------------------------------------------------------------------------------------
 
 
         if (!remove_inline_available) {
@@ -540,4 +540,6 @@ describe('RO and Campaign end-to-end', function() {
     // it('',async function(){
         
     // });
+
+
 }).timeout(90000);
