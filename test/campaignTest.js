@@ -534,7 +534,7 @@ describe('RO and Campaign end-to-end', function() {
         await driver.findElement(By.xpath(save_and_continue_button_xpath)).click()
         await driver.sleep(2000);
         console.log("Clicked on Save and Continue successfully ")
-        console("Line item created successfully")
+        console.log("Line item created successfully")
         
     });
     // it('',async function(){

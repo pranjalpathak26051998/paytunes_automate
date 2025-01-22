@@ -1,16 +1,9 @@
-require('dotenv').config();
-const {
-  Builder,
-  value,
-  Browser,
-  By,
-  Key,
-  Until,
-  withTagName,
-  until,
-} = require("selenium-webdriver");
-const fs = require("fs");
 
+require('dotenv').config();
+const {Builder, value,  Browser,  By,Key,  Until, withTagName, until} =  require('selenium-webdriver')
+
+
+const fs = require("fs");
 // function inner(){
 async function test() {
   return 1;
@@ -24,8 +17,8 @@ async function create_RO() {
     //navigating to the website
     // https://dev-connect.paytunes.in/    --> on dev
     // https://staging-connect.paytunes.in/  --> on staging
-    let website_url = "https://staging-connect.paytunes.in/";
-    // let website_url='https://dev-connect.paytunes.in/';
+    // let website_url = "https://staging-connect.paytunes.in/";
+    let website_url='https://dev-connect.paytunes.in/';
 
     await driver.get(website_url);
     await driver.sleep(1000);
@@ -36,11 +29,13 @@ async function create_RO() {
 
     //signin process
 
-    let id_username= process.env.username_staging;
+    // let id_username= process.env.username_staging;
+    let id_username= process.env.username_dev;
    
     console.log("username fetched successfully from .env file ");
   
-    let id_password = process.env.password_staging;
+    // let id_password = process.env.password_staging;
+    let id_password = process.env.password_dev;
     
     //enter username
     await driver.findElement(By.id("id_username")).clear();
@@ -88,7 +83,8 @@ async function create_RO() {
 
     await driver.sleep(1000);
     // let selected_client = 'p-testClient';
-    let selected_client = process.env.client_to_be_selected;
+    // let selected_client = process.env.client_to_be_selected;
+    let selected_client = process.env.client_to_be_selected_dev_paytunes;
     // p-testClient
     selected_client_xpath = `//ul[@id='select2-id_releasing_company-results']//li[text()='${selected_client}']`;
     await driver.findElement(By.xpath(selected_client_xpath)).click(); //important to select from the drop-down
@@ -116,7 +112,8 @@ async function create_RO() {
 
     //selecting the client_contact from the container
     // let client_contacted = "tessting@tessting.tessting | p-testClient"
-    let client_contacted = process.env.contacted_client;
+    // let client_contacted = process.env.contacted_client;
+    let client_contacted = process.env.contacted_client_dev_paytunes;
     // tessting@tessting.tessting | p-testClient
     let client_contact_xpath = `//ul[@class='select2-results__options']//li[text()='${client_contacted}']`;
     await driver.findElement(By.xpath(client_contact_xpath)).click();
@@ -133,7 +130,8 @@ async function create_RO() {
     await driver.sleep(1000);
     //Selecting the brand
     // let brand_selected = 'amul';
-    let brand_selected = process.env.selected_brand;
+    // let brand_selected = process.env.selected_brand;
+    let brand_selected = process.env.selected_brand_dev_paytunes;
     // amul
     let brand_selected_xpath = `//ul[@id='select2-id_brand-results']//li[text()='${brand_selected}']`;
     await driver.findElement(By.xpath(brand_selected_xpath)).click();
@@ -155,7 +153,7 @@ async function create_RO() {
     console.log("Successfully clicked and selected the option RO");
 
     //clicking on the date input field for selecting the date for the RO
-    let input_date = "2024-07-18";
+    let input_date = "2024-10-18";
     await driver
       .findElement(By.xpath("//input[@class='vDateField hasDatepicker']"))
       .sendKeys(input_date);
@@ -232,7 +230,7 @@ async function create_RO() {
 
   // console.log(RO_no);
 }
-
+create_RO()
 
   // ro_no =  create_RO();
 //  console.log("ro_no", ro_no);
