@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:brand": "mocha test/brandTest.js --timeout 50000",
-    "test:campaign": "mocha test/campaignTest.js --timeout 50000"
+    "test:campaign": "mocha test/campaignTest.js --timeout 50000",
+    "test:agencyUser": "mocha test/paytunes_agencyUser_dev.js --timeout 50000"
   },
 
   "author": "Pranjal Pathak",

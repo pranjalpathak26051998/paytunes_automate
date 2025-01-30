@@ -2,7 +2,7 @@
 
 
 
-const { Builder, Browser, By, value } = require("selenium-webdriver")
+const { Builder, Browser, By, value } = require("selenium-webdriver");
 require('dotenv').config();
 const assert = require('assert');
 const mocha = require('mocha');
